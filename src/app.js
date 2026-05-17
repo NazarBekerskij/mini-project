@@ -24,7 +24,6 @@ createPostForm.addEventListener("submit", async (event) => {
 event.preventDefault()
 
 
-
 const title = event.target.titleInput.value;
 const content = event.target.contentInput.value;
 
@@ -32,9 +31,34 @@ const content = event.target.contentInput.value;
 await createPost({title, content})
 event.target.reset()
 
- const data = await getPosts();
-  createItemsMarkup(data);
+const data = await getPosts();
+createItemsMarkup(data);
+
+
 })
+
+
+
+listRef.addEventListener("click", async (event) => {
+const button = event.target
+const id = button.dataset.id
+
+
+
+if(button.dataset.action === "delete"){
+  await deletePost(id)
+  const res = await getPosts()
+  createItemsMarkup(res)
+}
+
+
+
+
+})
+
+
+
+
 
 getPosts().then(data => createItemsMarkup(data));
 
