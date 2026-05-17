@@ -6,10 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    
-<h1>sadsad</h1>
 
-    <script type="module" src="./app.js"></script>
+<body>
+
+<form class="createPostForm">
+  <input type="text" name="titleInput" placeholder="Заголовок поста" required>
+  <textarea name="contentInput" placeholder="Текст поста" required></textarea>
+  <button type="submit">Додати пост</button>
+</form>
+
+  <div class="list"></div>
+
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

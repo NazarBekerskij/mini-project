@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "title": "ів",
+      "content": "ів",
+      "id": "jkbAxFc6xp4"
+    },
+    {
+      "title": "sd",
+      "content": "sad",
+      "id": "5IIWtjR9JRk"
+    },
+    {
+      "title": "sadsad",
+      "content": "sadsad",
+      "id": "OKeLqFlvCJ8"
+    }
+  ],
+  "comments": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
