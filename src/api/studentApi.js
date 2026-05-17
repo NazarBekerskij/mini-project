@@ -9,7 +9,7 @@ const res = await fetch(`${BASE_URL}`)
 const data = await res.json()  
 return data
 } catch (error) {
-// console.error(error);
+
 console.log(error);
 
 }
@@ -72,7 +72,7 @@ try {
     // return await res.json()
      return res.ok;
 } catch (error) {
-console.error(error);
+console.log(error);
 }
 
 }

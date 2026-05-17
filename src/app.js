@@ -1,5 +1,7 @@
 import {getPosts, createPost, updatePost, deletePost} from './api/studentApi'
 
+
+let currentId = null
 const listRef = document.querySelector(".list");
 const createPostForm = document.querySelector(".createPostForm");
 
@@ -27,12 +29,22 @@ event.preventDefault()
 const title = event.target.titleInput.value;
 const content = event.target.contentInput.value;
 
+if(currentId){
+  await updatePost(currentId, {title, content})
+  currentId = null
+}else{
+  await createPost({title, content}) 
+}
 
-await createPost({title, content})
-event.target.reset()
 
-const data = await getPosts();
-createItemsMarkup(data);
+event.target.reset();
+
+
+// createPost({title, content})
+// event.target.reset()
+
+const res = await getPosts();
+createItemsMarkup(res);
 
 
 })
@@ -52,7 +64,14 @@ if(button.dataset.action === "delete"){
 }
 
 
+if(button.dataset.action === "update"){
+  const post = document.getElementById(id);
 
+
+  createPostForm.titleInput.value = post.children[0].textContent;
+  createPostForm.contentInput.value = post.children[1].textContent;
+  currentId = id;
+}
 
 })
 
