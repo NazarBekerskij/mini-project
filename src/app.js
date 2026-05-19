@@ -21,7 +21,6 @@ function createItemsMarkup(array) {
   listRef.innerHTML = items;
 }
 
-
 createPostForm.addEventListener("submit", async (event) => {
 event.preventDefault()
 
