@@ -1,11 +1,5 @@
 {
-  "posts": [
-    {
-      "title": "іфвіфвфівіфв",
-      "content": "вів",
-      "id": "KOUG95o-ZnA"
-    }
-  ],
+  "posts": [],
   "comments": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
